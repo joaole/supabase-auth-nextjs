@@ -1,4 +1,5 @@
 "use client";
+import { signOut } from "@/actions/auth";
 import React, { useState } from "react";
 
 const Logout = () => {
@@ -8,6 +9,7 @@ const Logout = () => {
     event.preventDefault();
     setLoading(true);
 
+    await signOut();
     setLoading(false);
   };
 
